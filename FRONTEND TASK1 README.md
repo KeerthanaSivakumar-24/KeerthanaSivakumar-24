@@ -1,0 +1,6 @@
+- Using notepad and html code make a layout for the portfolio.
+- Make a code which gives three layouts that are about me,projects and contact me.
+- To make your website look more presentable use <style> under which u can add margin or background images or background colour.
+- To include spaces between each line use "br witnin <>", br=break.
+- To make it look presentable use CSS code base.
+- For a responsive layout use JavaScript code base.
