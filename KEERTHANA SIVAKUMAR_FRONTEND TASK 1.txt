@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      font-family: "Times New Roman", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #E9E4D4;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #A57164;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .center-img {
+      display: block;
+      margin: 0 auto;
+      max-width: 20%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+
+
+<body>
+ 
+
+  <header>
+    <h1>Keerthana Sivakumar</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+ 
+<section id="about">
+  <h2>About Me</h2>
+
+  <!-- Replace with a proper relative or hosted image path -->
+  <img src="images/profile.jpg" alt="Keerthana Sivakumar" class="center-img">
+
+  <p style="font-size: 18px; font-family: 'Times New Roman';">
+    I am Keerthana Sivakumar, a frontend developer with a strong passion for creating clean, responsive, and user-friendly web interfaces. I specialize in turning design concepts into functional, pixel-perfect code using modern technologies like HTML, CSS, and JavaScript, along with frameworks such as grid.
+
+    I enjoy solving UI/UX challenges, optimizing performance, and building applications that not only look good but also work seamlessly across different browsers and devices. I pay close attention to detail and care deeply about writing maintainable, scalable code.
+
+    Beyond the technical side, I’m a strong communicator and enjoy collaborating with designers, back-end developers, and product teams to bring ideas to life. I'm always learning and keeping up with the latest frontend trends and tools, from component libraries to build systems like Vite or Webpack.
+
+    Whether it's building from scratch or improving existing interfaces, I take pride in delivering smooth and intuitive user experiences.
+  </p>
+</section>
+
+  .center-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 20%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>I developed a fully responsive e-commerce frontend for a fashion retail brand. The project focused on creating a modern, user-friendly interface that works seamlessly across desktops, tablets, and mobile devices.
+<br>
+<br>
+The key features are:
+<br>
+Product Listings with Filters: Users can browse products by category, price range, and other filters.
+<br>
+Product Detail Page: Includes image gallery, description, reviews, and size/color options.
+<br>
+Shopping Cart & Checkout UI: Dynamic cart updates, form validation, and step-by-step checkout flow.
+<br>
+Search Functionality: Real-time search with suggestions using JavaScript.
+<br>
+Dark/Light Mode Toggle: Theme switcher implemented using CSS variables and localStorage.
+<br>
+<br>
+The technologies I used were HTML5, CSS3, JavaScript (ES6),Styled Components for modular CSS,React Router for navigation between pages,Git & GitHub for version control
+<br>
+<br>
+The challenges I overcame were Ensured cross-browser compatibility and performance optimization,improved accessibility with proper semantic HTML and integrated responsive design principles using CSS Grid .</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>I built an interactive admin dashboard designed to help users visualize and manage business data in real-time. The goal was to create a clean, professional UI that presents complex data in a simple, understandable way.
+<br>
+The key features are:
+Dashboard Overview: Real-time metrics for sales, users, and performance KPIs.
+<br>
+Data Visualizations: Interactive charts (bar, line, pie) built using Chart.js.
+<br>
+Sidebar Navigation: Collapsible menu with icons, routes, and active state.
+<br>
+Responsive Design: Optimized for desktop and tablet viewing using  CSS Grid.
+<br>
+<br>
+Technologies Used:React.js for building reusable UI components,Tailwind CSS for fast and responsive styling,Chart.js for data visualization,React Router for multi-page navigation and Git & GitHub for version control and collaboration.
+<br>
+<br>
+The challenges i overcame were implemented clean and scalable code structure using reusable components,integrated fake API using JSON and server to simulate real data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+      <p id="form-message"></p>
+    </form>
+  </section>
+<script>
+  
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const message = document.getElementById('message');
+  const formMessage = document.getElementById('form-message');
+
+  if (!name.value || !email.value || !message.value) {
+    formMessage.textContent = "All fields are required.";
+    formMessage.style.color = "red";
+    return;
+  }
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.value.match(emailPattern)) {
+    formMessage.textContent = "Please enter a valid email address.";
+    formMessage.style.color = "red";
+    return;
+  }
+
+  formMessage.textContent = "Message sent!";
+  formMessage.style.color = "green";
+  // Optionally clear the form
+  this.reset();
+});
+</script>
+</body>
+</html>
+
+
+
+
